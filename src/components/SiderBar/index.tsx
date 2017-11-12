@@ -1,7 +1,9 @@
 import React from 'react'
+import { Link } from 'react-router'
 import { Layout, Menu, Icon } from 'antd'
 const { Sider } = Layout
 const { SubMenu } = Menu
+import './index.styl'
 
 class SiderBar extends React.Component {
 	render() {
@@ -11,7 +13,7 @@ class SiderBar extends React.Component {
 				collapsedWidth="0"
 				onCollapse={(collapsed, type) => { console.log(collapsed, type); }}
 			>
-				<div className="logo" />
+				<div className="title">博客管理后台</div>
 				<Menu 
 					theme="dark" 
 					mode="inline" 
@@ -19,7 +21,9 @@ class SiderBar extends React.Component {
 				>
 					<SubMenu key="sub1" title={<span><Icon type="file-text" />文章管理</span>}>
 						<Menu.Item key="1">文章列表</Menu.Item>
-						<Menu.Item key="2">发布文章</Menu.Item>
+						<Menu.Item key="2">
+							<Link to="/article/write">撰写文章</Link>
+						</Menu.Item>
 					</SubMenu>
 				</Menu>
 			</Sider>
