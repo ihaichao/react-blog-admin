@@ -27,7 +27,7 @@
 
 "@types/react-redux@^5.0.12":
   version "5.0.12"
-  resolved "http://registry.npm.bilibili.co/@types/react-redux/download/@types/react-redux-5.0.12.tgz#c066812eb970009b373372f439d08265ed2a6f8e"
+  resolved "http://registry.npm.taobao.org/@types/react-redux/download/@types/react-redux-5.0.12.tgz#c066812eb970009b373372f439d08265ed2a6f8e"
   dependencies:
     "@types/react" "*"
     redux "^3.6.0"
@@ -2394,7 +2394,7 @@ hoist-non-react-statics@1.x, hoist-non-react-statics@^1.2.0:
 
 hoist-non-react-statics@^2.2.1:
   version "2.3.1"
-  resolved "http://registry.npm.bilibili.co/hoist-non-react-statics/download/hoist-non-react-statics-2.3.1.tgz#343db84c6018c650778898240135a1420ee22ce0"
+  resolved "http://registry.npm.taobao.org/hoist-non-react-statics/download/hoist-non-react-statics-2.3.1.tgz#343db84c6018c650778898240135a1420ee22ce0"
 
 home-or-tmp@^2.0.0:
   version "2.0.0"
@@ -3336,7 +3336,7 @@ locate-path@^2.0.0:
 
 lodash-es@^4.2.0, lodash-es@^4.2.1:
   version "4.17.4"
-  resolved "http://registry.npm.bilibili.co/lodash-es/download/lodash-es-4.17.4.tgz#dcc1d7552e150a0640073ba9cb31d70f032950e7"
+  resolved "http://registry.npm.taobao.org/lodash-es/download/lodash-es-4.17.4.tgz#dcc1d7552e150a0640073ba9cb31d70f032950e7"
 
 lodash._getnative@^3.0.0:
   version "3.9.1"
@@ -4935,7 +4935,7 @@ react-lazy-load@^3.0.12:
 
 react-redux@^5.0.6:
   version "5.0.6"
-  resolved "http://registry.npm.bilibili.co/react-redux/download/react-redux-5.0.6.tgz#23ed3a4f986359d68b5212eaaa681e60d6574946"
+  resolved "http://registry.npm.taobao.org/react-redux/download/react-redux-5.0.6.tgz#23ed3a4f986359d68b5212eaaa681e60d6574946"
   dependencies:
     hoist-non-react-statics "^2.2.1"
     invariant "^2.0.0"
@@ -4944,9 +4944,9 @@ react-redux@^5.0.6:
     loose-envify "^1.1.0"
     prop-types "^15.5.10"
 
-react-router@3.2.0:
+react-router@^3.2.0:
   version "3.2.0"
-  resolved "http://registry.npm.bilibili.co/react-router/download/react-router-3.2.0.tgz#62b6279d589b70b34e265113e4c0a9261a02ed36"
+  resolved "http://registry.npm.taobao.org/react-router/download/react-router-3.2.0.tgz#62b6279d589b70b34e265113e4c0a9261a02ed36"
   dependencies:
     create-react-class "^15.5.1"
     history "^3.0.0"
@@ -5073,7 +5073,7 @@ reduce-function-call@^1.0.1:
 
 redux@^3.6.0:
   version "3.7.2"
-  resolved "http://registry.npm.bilibili.co/redux/download/redux-3.7.2.tgz#06b73123215901d25d065be342eb026bc1c8537b"
+  resolved "http://registry.npm.taobao.org/redux/download/redux-3.7.2.tgz#06b73123215901d25d065be342eb026bc1c8537b"
   dependencies:
     lodash "^4.2.1"
     lodash-es "^4.2.1"
@@ -5782,7 +5782,7 @@ sw-toolbox@^3.4.0:
 
 symbol-observable@^1.0.3:
   version "1.0.4"
-  resolved "http://registry.npm.bilibili.co/symbol-observable/download/symbol-observable-1.0.4.tgz#29bf615d4aa7121bdd898b22d4b3f9bc4e2aa03d"
+  resolved "http://registry.npm.taobao.org/symbol-observable/download/symbol-observable-1.0.4.tgz#29bf615d4aa7121bdd898b22d4b3f9bc4e2aa03d"
 
 symbol-tree@^3.2.1:
   version "3.2.2"
