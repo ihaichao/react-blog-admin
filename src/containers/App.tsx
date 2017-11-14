@@ -15,10 +15,8 @@ class App extends React.Component {
 				<SiderBar />
 				<Layout>
 					<Header style={{ background: '#fff', padding: 0 }} />
-					<Content style={{ margin: '24px 16px 0' }}>
-						<div style={{ padding: 24, background: '#fff', minHeight: 360 }}>
-							content
-        		</div>
+					<Content style={{ margin: '24px 16px 0', backgroundColor: '#fff' }}>
+						{this.props.children}
 					</Content>
 					<Footer style={{ textAlign: 'center' }}>
 						React-Blog-Admin ©2017 Created by Haichao

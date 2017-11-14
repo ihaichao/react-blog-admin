@@ -20,7 +20,9 @@ class SiderBar extends React.Component {
 					defaultSelectedKeys={['4']}
 				>
 					<SubMenu key="sub1" title={<span><Icon type="file-text" />文章管理</span>}>
-						<Menu.Item key="1">文章列表</Menu.Item>
+						<Menu.Item key="1">
+							<Link to="/article/list">文章列表</Link>
+						</Menu.Item>
 						<Menu.Item key="2">
 							<Link to="/article/write">撰写文章</Link>
 						</Menu.Item>
