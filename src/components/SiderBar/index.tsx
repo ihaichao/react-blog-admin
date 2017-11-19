@@ -11,7 +11,6 @@ class SiderBar extends React.Component {
 			<Sider
 				breakpoint="lg"
 				collapsedWidth="0"
-				onCollapse={(collapsed, type) => { console.log(collapsed, type); }}
 			>
 				<div className="title">博客管理后台</div>
 				<Menu 
