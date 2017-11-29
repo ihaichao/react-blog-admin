@@ -18,6 +18,17 @@ async function createArticle (params: createArticleParams) {
 	}
 }
 
+async function getArticleList (): Promise<{}> {
+	try {
+		const res = await axios.get('/article')
+		return res.data
+	} catch (err) {
+		console.log(err)
+		return {}
+	}
+}
+
 export {
-	createArticle
+	createArticle,
+	getArticleList
 }
