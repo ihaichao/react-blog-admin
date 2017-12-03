@@ -1,42 +1,61 @@
 import React from 'react'
-import { Table } from 'antd'
+import { connect, Dispatch } from 'react-redux'
+import { Table, Button } from 'antd'
+import * as actions from '../../actions'
 
-const dataSource = [{
-  key: '1',
-  title: '胡彦斌',
-  tag: 32,
-  date: '西湖区湖底公园1号'
-}, {
-  key: '2',
-  title: '胡彦祖',
-  tag: 42,
-  date: '西湖区湖底公园1号'
-}];
+// interface ArticleItem {
+//   key: string,
+//   title: string,
+// }
 
 const columns = [{
-  title: '标题',
+  title: '文章标题',
   dataIndex: 'title',
   key: 'title'
 }, {
-  title: '标签',
+  title: '文章标签',
   dataIndex: 'tag',
   key: 'tag'
 }, {
-  title: '日期',
-  dataIndex: 'date',
-  key: 'date'
+  title: '创建时间',
+  dataIndex: 'createTime',
+  key: 'createTime'
+}, {
+  title: '操作',
+  dataIndex: 'action',
+  render: (text: any, record: any) => (
+    <div>
+      <Button type="danger" onClick={() => this.handleDelete(text, record)}>删除</Button>
+    </div>
+  )
 }];
 
-interface AppProps {}
+interface Props {
+  articleList: Array<object>,
+  dispatch: Dispatch<actions.ArticleListAction>
+}
 
-interface AppState {}
+class ArticleList extends React.Component<Props> {
+  componentDidMount() {
+    this.props.dispatch(actions.fetchArticleList())
+  }
 
-class ArticleList extends React.Component<AppProps, AppState> {
+  handleDelete () {
+    console.log(1)
+  }
+
 	render() {
+    const { articleList } = this.props
 		return (
-			<Table columns={columns} dataSource={dataSource} />
+			<Table columns={columns} dataSource={articleList} />
 		)
 	}
 }
 
-export default ArticleList
+const mapStateToProps = (state: any) => {
+  return {
+    articleList: state.article.articleList
+  }
+}
+
+export default connect(mapStateToProps)(ArticleList)

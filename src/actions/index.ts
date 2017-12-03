@@ -1,10 +1,14 @@
 import { getArticleList } from '../apis'
+import * as constants from '../constants'
 
-export const RECEIVE_ARTICLE_LIST = 'RECEIVE_ARTICLE_LIST'
+export interface ArticleListAction {
+	type: constants.RECEIVE_ARTICLE_LIST,
+	list: Array<object>
+}
 
 export function receiveArticleList (list: Array<object>) {
 	return {
-		type: RECEIVE_ARTICLE_LIST,
+		type: constants.RECEIVE_ARTICLE_LIST,
 		list: list
 	}
 }

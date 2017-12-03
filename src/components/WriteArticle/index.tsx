@@ -35,7 +35,6 @@ class WriteArticle extends React.Component<AppProps, AppState> {
 
   handleSubmit = (e: any) => {
     e.preventDefault()
-    // console.log(this.props)
     this.props.form.validateFields((err: any, values: any) => {
       if (!err) {
         // console.log(values)

@@ -1,8 +1,5 @@
 import React from 'react'
 import { Layout } from 'antd'
-// import Header from '../components/Header'
-// import Sider from '../components/Sider'
-// import Content from '../components/Content'
 import SiderBar from '../components/SiderBar'
 import 'antd/dist/antd.css'
 import './App.styl'

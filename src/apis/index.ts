@@ -2,14 +2,14 @@ import axios from 'axios'
 
 axios.defaults.baseURL = '//localhost:3001'
 
-interface createArticleParams {
+interface CreateArticleParams {
 	title: string,
 	tag?: string,
 	content: '',
 	createTime?: Date,
 	updateTime?: Date
 }
-async function createArticle (params: createArticleParams) {
+async function createArticle (params: CreateArticleParams) {
 	try {
 		const res = await axios.post('/article', params)
 		return res
@@ -18,7 +18,7 @@ async function createArticle (params: createArticleParams) {
 	}
 }
 
-async function getArticleList (): Promise<{}> {
+async function getArticleList (): Promise<object> {
 	try {
 		const res = await axios.get('/article')
 		return res.data
