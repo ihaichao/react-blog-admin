@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "antd": "^2.13.9",
+    "antd": "^3.0.1",
     "autoprefixer": "7.1.2",
     "axios": "^0.17.1",
     "case-sensitive-paths-webpack-plugin": "2.1.1",

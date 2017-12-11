@@ -11,7 +11,7 @@ interface CreateArticleParams {
 }
 async function createArticle (params: CreateArticleParams) {
 	try {
-		const res = await axios.post('/article', params)
+		const res = await axios.post('/articles', params)
 		return res
 	} catch (err) {
 		return console.log(err)
@@ -20,7 +20,7 @@ async function createArticle (params: CreateArticleParams) {
 
 async function getArticleList (): Promise<object> {
 	try {
-		const res = await axios.get('/article')
+		const res = await axios.get('/articles')
 		return res.data
 	} catch (err) {
 		console.log(err)
@@ -28,7 +28,17 @@ async function getArticleList (): Promise<object> {
 	}
 }
 
+async function deleteArticle (id: string) {
+	try {
+		const res = await axios.delete(`/articles/${id}`)
+		return res
+	} catch (err) {
+		return console.log(err)
+	}
+}
+
 export {
 	createArticle,
-	getArticleList
+	getArticleList,
+	deleteArticle
 }
