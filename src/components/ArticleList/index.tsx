@@ -1,7 +1,8 @@
 import React from 'react'
 import { connect, Dispatch } from 'react-redux'
-import { Table, Popconfirm, Button } from 'antd'
+import { Table, Popconfirm, Button, message } from 'antd'
 import * as actions from '../../actions'
+import { deleteArticle } from '../../apis'
 
 interface Props {
   articleList: Array<any>,
@@ -26,10 +27,10 @@ class ArticleList extends React.Component<Props> {
       title: '操作',
       dataIndex: 'action',
       key: 'action',
-      render: () => {
+      render: (text: any, record: any) => {
         return (
           <div>
-            <Popconfirm title="确定要删除吗?" onConfirm={this.handleDelete} okText="确认" cancelText="取消">
+            <Popconfirm title="确定要删除吗?" onConfirm={() => this.handleDelete(record)} okText="确认" cancelText="取消">
               <Button type="danger">删除</Button>
             </Popconfirm>
           </div>
@@ -42,9 +43,14 @@ class ArticleList extends React.Component<Props> {
     this.props.dispatch(actions.fetchArticleList())
   }
 
-  handleDelete = (e: any) => {
-    console.log(e.target)
-    console.log(this)
+  async handleDelete (record: any) {
+    const res: any = await deleteArticle(record.id)
+    if (res.data.code === 0) {
+      this.props.dispatch(actions.deleteArticle(record.id))
+      message.info('删除文章成功')
+    } else {
+      message.error('删除文章失败')
+    }
   }
 
 	render() {
