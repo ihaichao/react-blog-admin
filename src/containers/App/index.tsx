@@ -1,8 +1,8 @@
 import React from 'react'
 import { Layout } from 'antd'
-import SideBar from '../components/SideBar'
+import SideBar from '../../components/SideBar'
 import 'antd/dist/antd.css'
-import './App.styl'
+import './index.styl'
 const { Header, Content, Footer } = Layout
 
 class App extends React.Component {
