@@ -15,14 +15,14 @@ const formItemLayout = {
   wrapperCol: { span: 8 }
 }
 
-interface AppProps extends FormComponentProps {}
+interface Props extends FormComponentProps {}
 
-interface AppState {
+interface State {
   content: ReactMdeValue
 }
 
-class WriteArticle extends React.Component<AppProps, AppState> {
-  constructor(props: AppProps) {
+class WriteArticle extends React.Component<Props, State> {
+  constructor(props: Props) {
     super(props)
     this.state = {
       content: { text: '' }
@@ -33,7 +33,7 @@ class WriteArticle extends React.Component<AppProps, AppState> {
     this.setState({ content: value })
   }
 
-  handleSubmit = (e: any) => {
+  handleSubmit = (e: React.ChangeEvent<HTMLInputElement>) => {
     e.preventDefault()
     this.props.form.validateFields(async (err: any, values: any) => {
       if (!err) {

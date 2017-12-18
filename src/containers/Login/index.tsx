@@ -1,15 +1,22 @@
 /// <reference path="../../types/particlesJS.d.ts" />
 
 import React, { Component } from 'react'
+import { Form, Icon, Input, Button } from 'antd'
+import { FormComponentProps } from 'antd/lib/form/Form'
 import 'particles.js'
 import './index.styl'
+
+const FormItem = Form.Item
 
 declare global {
 	interface Window { particlesJS: any }
 }
 const particlesJS = window.particlesJS
 
-class Login extends Component {
+
+interface Props extends FormComponentProps {}
+
+class Login extends Component<Props> {
 	componentDidMount() {
 		particlesJS('particles', 
 		{
@@ -124,16 +131,52 @@ class Login extends Component {
 		})
 	}
 
+	handleSubmit = (e: React.ChangeEvent<HTMLInputElement>) => {
+    e.preventDefault();
+    this.props.form.validateFields((err, values) => {
+      if (!err) {
+        console.log('Received values of form: ', values);
+      }
+    });
+  }
+
 	render() {
+		const { getFieldDecorator } = this.props.form
 		return (
-			<div id="particles">
-				<canvas 
-					className="particles-js-canvas-el"
-					style={{width: '100%', height: '100%'}}
-				/>
+			<div className="login-wrapper">
+				<Form onSubmit={this.handleSubmit} className="login-form">
+					<FormItem className="login-title">Blog Admin</FormItem>
+					<FormItem>
+						{getFieldDecorator('userName', {
+							rules: [{ required: true, message: 'Please input your username!' }],
+						})(
+							<Input prefix={<Icon type="user" style={{ color: 'rgba(0,0,0,.25)' }} />} placeholder="Username" />
+						)}
+					</FormItem>
+					<FormItem>
+						{getFieldDecorator('password', {
+							rules: [{ required: true, message: 'Please input your Password!' }],
+						})(
+							<Input prefix={<Icon type="lock" style={{ color: 'rgba(0,0,0,.25)' }} />} type="password" placeholder="Password" />
+						)}
+					</FormItem>
+					<FormItem>
+						<Button type="primary" htmlType="submit" className="login-form-button">
+							Log in
+						</Button>
+					</FormItem>
+				</Form>
+				<div className="copyright">Copyright©2017 Created by Haichao</div>
+				<div id="particles">
+					<canvas 
+						className="particles-js-canvas-el"
+						style={{width: '100%', height: '100%'}}
+					/>
+				</div>
 			</div>
 		)
 	}
 }
 
-export default Login
+const WrappedLogin = Form.create()(Login)
+export default WrappedLogin
