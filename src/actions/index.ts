@@ -1,7 +1,8 @@
+import { Dispatch } from 'redux'
 import { getArticleList } from '../apis'
 import * as constants from '../constants'
 
-export interface ArticleListAction {
+export interface IArticleListAction {
 	type: string,
 	list?: Array<object>
 	id?: string
@@ -18,7 +19,7 @@ export function receiveArticleList (list: Array<object>) {
  * 查询文章列表
  */
 export function fetchArticleList () {
-	return async (dispatch: any) => {
+	return async (dispatch: Dispatch<any>) => {
 		try {
 			const res: any = await getArticleList()
 			dispatch(receiveArticleList(res.data))

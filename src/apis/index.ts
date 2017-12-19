@@ -2,14 +2,14 @@ import axios from 'axios'
 
 axios.defaults.baseURL = '//localhost:3001'
 
-interface CreateArticleParams {
+interface ICreateArticleParams {
 	title: string,
 	tag?: string,
 	content: '',
 	createTime?: Date,
 	updateTime?: Date
 }
-async function createArticle (params: CreateArticleParams) {
+async function createArticle (params: ICreateArticleParams) {
 	try {
 		const res = await axios.post('/articles', params)
 		return res

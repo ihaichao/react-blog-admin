@@ -1,4 +1,4 @@
-/// <reference path="../../types/particlesJS.d.ts" />
+/// <reference path="../../typings/modules/particlesJS.d.ts" />
 
 import React, { Component } from 'react'
 import { Form, Icon, Input, Button } from 'antd'
@@ -7,16 +7,11 @@ import 'particles.js'
 import './index.styl'
 
 const FormItem = Form.Item
-
-declare global {
-	interface Window { particlesJS: any }
-}
 const particlesJS = window.particlesJS
 
+interface IProps extends FormComponentProps {}
 
-interface Props extends FormComponentProps {}
-
-class Login extends Component<Props> {
+class Login extends Component<IProps> {
 	componentDidMount() {
 		particlesJS('particles', 
 		{

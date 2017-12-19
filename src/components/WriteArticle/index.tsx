@@ -15,14 +15,14 @@ const formItemLayout = {
   wrapperCol: { span: 8 }
 }
 
-interface Props extends FormComponentProps {}
+interface IProps extends FormComponentProps {}
 
-interface State {
+interface IState {
   content: ReactMdeValue
 }
 
-class WriteArticle extends React.Component<Props, State> {
-  constructor(props: Props) {
+class WriteArticle extends React.Component<IProps, IState> {
+  constructor(props: IProps) {
     super(props)
     this.state = {
       content: { text: '' }

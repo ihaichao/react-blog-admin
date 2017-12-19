@@ -4,12 +4,12 @@ import { Table, Popconfirm, Button, message } from 'antd'
 import * as actions from '../../actions'
 import { deleteArticle } from '../../apis'
 
-interface Props {
+interface IProps {
   articleList: Array<any>,
-  dispatch: Dispatch<actions.ArticleListAction>
+  dispatch: Dispatch<actions.IArticleListAction>
 }
 
-class ArticleList extends React.Component<Props> {
+class ArticleList extends React.Component<IProps> {
   get columns() {
     return [{
       title: '文章标题',

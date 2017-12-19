@@ -1,14 +1,11 @@
-import { StoreState } from '../types'
-import { ArticleListAction } from '../actions'
+import { IRootState } from '@src/typings/store'
+import { IArticleListAction } from '../actions'
 
-// interface articleList {
-// 	Array<>
-// }
 const initialState = {
 	articleList: []
 }
 
-export default function articleList (state: StoreState = initialState, action: ArticleListAction) {
+export default function articleList (state: IRootState = initialState, action: IArticleListAction) {
 	switch (action.type) {
 		case 'RECEIVE_ARTICLE_LIST':
 			return Object.assign({}, state, { articleList: action.list })

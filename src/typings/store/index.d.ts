@@ -1,4 +1,4 @@
-export interface StoreState {
+export interface IRootState {
 	articleList: Array<{
 		id: string,
 		title: string,
