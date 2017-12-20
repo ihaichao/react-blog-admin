@@ -1,5 +1,3 @@
-/// <reference path="../../typings/modules/particlesJS.d.ts" />
-
 import React, { Component } from 'react'
 import { Form, Icon, Input, Button } from 'antd'
 import { FormComponentProps } from 'antd/lib/form/Form'

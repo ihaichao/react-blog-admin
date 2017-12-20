@@ -5,7 +5,7 @@ import 'react-mde/lib/styles/css/react-mde.css'
 import 'react-mde/lib/styles/css/react-mde-command-styles.css'
 import 'react-mde/lib/styles/css/markdown-default-theme.css'
 import 'font-awesome/css/font-awesome.css'
-import { Form, Input, Button, message } from 'antd'
+import { Form, Input, Button } from 'antd'
 import { FormComponentProps } from 'antd/lib/form/Form'
 import { createArticle } from '../../apis'
 const FormItem = Form.Item
@@ -37,11 +37,9 @@ class WriteArticle extends React.Component<IProps, IState> {
     e.preventDefault()
     this.props.form.validateFields(async (err: any, values: any) => {
       if (!err) {
-        const res: any = await createArticle(values)
-        if (res.data.code === 0) {
+        const res = await createArticle(values)
+        if (res.code === 0) {
           window.location.hash = '#/article/list'
-        } else {
-          message.error('文章发布失败')
         }
       }
     })

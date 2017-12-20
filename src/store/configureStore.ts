@@ -1,6 +1,6 @@
 import { createStore, applyMiddleware, compose, combineReducers } from 'redux'
 import ThunkMiddleware from 'redux-thunk'
-import article from '../reducers/index'
+import { article } from '../reducers'
 
 const finalCreateStore = compose(
 	applyMiddleware(ThunkMiddleware)

@@ -1,0 +1,1 @@
+/// <reference path="./particlesJS.d.ts" />
