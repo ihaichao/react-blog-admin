@@ -7,7 +7,7 @@ import 'react-mde/lib/styles/css/markdown-default-theme.css'
 import 'font-awesome/css/font-awesome.css'
 import { Form, Input, Button } from 'antd'
 import { FormComponentProps } from 'antd/lib/form/Form'
-import { createArticle } from '../../apis'
+import { createArticle } from '@src/apis'
 const FormItem = Form.Item
 
 const formItemLayout = {

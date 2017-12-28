@@ -20,3 +20,10 @@ export async function getArticleList () {
 export async function deleteArticle (id: string) {
 	return axios.delete(`/articles/${id}`)
 }
+
+export async function login (username: string, password: string) {
+	return axios.post('/login', {
+		username: username,
+		password: password
+	})
+}

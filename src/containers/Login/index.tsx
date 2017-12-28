@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { Form, Icon, Input, Button } from 'antd'
 import { FormComponentProps } from 'antd/lib/form/Form'
+import { login } from '@src/apis'
 import 'particles.js'
 import './index.styl'
 
@@ -125,12 +126,16 @@ class Login extends Component<IProps> {
 	}
 
 	handleSubmit = (e: React.ChangeEvent<HTMLInputElement>) => {
-    e.preventDefault();
-    this.props.form.validateFields((err, values) => {
+    e.preventDefault()
+    this.props.form.validateFields(async (err, values) => {
       if (!err) {
-        console.log('Received values of form: ', values);
+				console.log('Received values of form: ', values)
+				const res = await login(values.username, values.password)
+				if (res.code === 0) {
+					window.location.hash = '#/article/list'
+				}
       }
-    });
+    })
   }
 
 	render() {
@@ -140,7 +145,7 @@ class Login extends Component<IProps> {
 				<Form onSubmit={this.handleSubmit} className="login-form">
 					<FormItem className="login-title">Blog Admin</FormItem>
 					<FormItem>
-						{getFieldDecorator('userName', {
+						{getFieldDecorator('username', {
 							rules: [{ required: true, message: 'Please input your username!' }],
 						})(
 							<Input prefix={<Icon type="user" style={{ color: 'rgba(0,0,0,.25)' }} />} placeholder="Username" />
