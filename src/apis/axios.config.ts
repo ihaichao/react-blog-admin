@@ -4,7 +4,7 @@ import { notification } from 'antd'
 axios.defaults.timeout = 10000
 
 axios.interceptors.request.use(config => {
-  // config.withCredentials = true
+  config.withCredentials = true
   config.url = process.env.NODE_ENV === 'development' ? '//localhost:3001' + config.url : '//api.zongzheng.me' + config.url
   return config
 })

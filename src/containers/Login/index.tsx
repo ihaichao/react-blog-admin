@@ -129,7 +129,6 @@ class Login extends Component<IProps> {
     e.preventDefault()
     this.props.form.validateFields(async (err, values) => {
       if (!err) {
-				console.log('Received values of form: ', values)
 				const res = await login(values.username, values.password)
 				if (res.code === 0) {
 					window.location.hash = '#/article/list'
