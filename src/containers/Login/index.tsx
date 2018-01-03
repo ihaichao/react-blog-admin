@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { Form, Icon, Input, Button } from 'antd'
 import { FormComponentProps } from 'antd/lib/form/Form'
-import { login } from '@src/apis'
+import { login, isLogin } from '@src/apis'
 import 'particles.js'
 import './index.styl'
 
@@ -11,6 +11,13 @@ const particlesJS = window.particlesJS
 interface IProps extends FormComponentProps {}
 
 class Login extends Component<IProps> {
+	async componentWillMount () {
+		const res = await isLogin()
+		if (res.code === 0) {
+			window.location.hash = '#/article/list'
+		} 
+	}
+
 	componentDidMount() {
 		particlesJS('particles', 
 		{

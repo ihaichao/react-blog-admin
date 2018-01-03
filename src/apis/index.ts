@@ -22,8 +22,12 @@ export async function deleteArticle (id: string) {
 }
 
 export async function login (username: string, password: string) {
-	return axios.post('/login', {
+	return axios.post('/user/login', {
 		username: username,
 		password: password
 	})
+}
+
+export async function isLogin () {
+	return axios.get('/user/islogin')
 }

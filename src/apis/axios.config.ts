@@ -1,5 +1,5 @@
 import axios from 'axios'
-import { notification } from 'antd'
+import { message } from 'antd'
 
 axios.defaults.timeout = 10000
 
@@ -11,17 +11,19 @@ axios.interceptors.request.use(config => {
 
 axios.interceptors.response.use(response => {
   if (response.data.code !== 0) {
-    notification.error({
-      message: `请求失败: ${response.config.url}`,
-      description: response.data.message
-    })
+    // notification.error({
+    //   message: `请求失败: ${response.config.url}`,
+    //   description: response.data.message
+    // })
+    message.info(`请求失败: ${response.config.url}`)
   }
   return response.data
 }, error => {
-  notification.error({
-    message: '网络错误或服务不可用',
-    description: error.message
-  })
+  // notification.error({
+  //   message: '网络错误或服务不可用',
+  //   description: error.message
+  // })
+  message.info('网络错误或服务不可用')
   error.data = {
     code: null,
     data: null,
